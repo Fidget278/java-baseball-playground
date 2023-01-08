@@ -3,8 +3,7 @@ package study;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
-import static org.assertj.core.api.Assertions.assertThat;
-import static org.assertj.core.api.Assertions.assertThatThrownBy;
+import static org.assertj.core.api.Assertions.*;
 
 public class StringTest {
     @Test
@@ -29,8 +28,8 @@ public class StringTest {
         String str = "1,2";
         String strSplit[] = str.split(",");
 
-        assertThat(strSplit[0]).isEqualTo("1");
-        assertThat(strSplit[1]).isEqualTo("2");
+        assertThat(strSplit).containsExactly("1", "2");
+
     }
 
     @Test
@@ -38,7 +37,7 @@ public class StringTest {
         String str = "1";
         String strSplit[] = str.split(",");
 
-        assertThat(strSplit[0]).isEqualTo("2");
+        assertThat(strSplit).contains("1");
     }
 
 

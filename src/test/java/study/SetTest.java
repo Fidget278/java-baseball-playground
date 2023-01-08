@@ -30,6 +30,7 @@ public class SetTest {
     @DisplayName("Set Size 확인")
     @Test void setSizeTest(){
         assertThat(numbers).hasSize(3);
+        assertThat(numbers.size()).isEqualTo(3);
     }
 
     /*
@@ -48,7 +49,7 @@ public class SetTest {
     @ParameterizedTest
     @ValueSource(ints = {1, 2, 3}) // number에 1, 2, 3이 차례로 들어가며 contains 테스트 3번 실행
     void contains(int number) {
-        assertThat(numbers.contains(number)).isTrue();
+        assertThat(numbers).contains(number);
     }
 
     /*

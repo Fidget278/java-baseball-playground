@@ -1,32 +1,28 @@
 package Calculator;
 
-import jdk.nashorn.internal.objects.annotations.Getter;
 
-import java.util.Scanner;
-
-
-public class Calculator {
+public class Calculator_backup {
     private String[] values;
-    private String regex = " ";
 
     public String[] splitValue(String value) {
+        String regex = " ";
         values = value.split(regex);
         return values;
     }
 
-    public int calc() {
+    public int calc(String calcStr) {
         int number = 0, answer = 0;
         String operator = "";
 
+        splitValue(calcStr);
         for(int i = 0; i < values.length; ++i) {
-            if(i % 2 == 0)
+            if(i % 2 == 0) {
                 number = Integer.parseInt(values[i]);
-            else
+                answer = doOps(number, answer, operator);
+            } else {
                 operator = values[i];
-
-            answer = doOps(number, answer, operator);
+            }
         }
-
 
         return answer;
     }
@@ -34,7 +30,7 @@ public class Calculator {
     public int doOps(int number, int target, String operator) {
 
         if(operator.length() <= 0)
-            return target;
+            return number;
 
         switch(operator) {
             case "+" :
