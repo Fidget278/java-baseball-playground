@@ -13,14 +13,14 @@ import static org.junit.jupiter.api.Assertions.assertArrayEquals;
 
 public class CalculatorTest_2 {
 
-    //final String testStr = "2 / 2 * 3 + 1";
-    final String testStr = "2 + 3 * 4 / 2";
+    final String testStr = "2 / 2 * 3 + 1";
+    //final String testStr = "2 + 3 * 4 / 2";
 
     @Test
     @DisplayName("계산기 입력값 split 테스트")
     void inputSplitTest() {
-        //String[] expect = {"2", "/", "2", "*", "3", "+", "1"};
-        String[] expect = {"2", "+", "3", "*", "4", "/", "2"};
+        String[] expect = {"2", "/", "2", "*", "3", "+", "1"};
+        //String[] expect = {"2", "+", "3", "*", "4", "/", "2"};
 
         assertArrayEquals(expect, Calculator.splitValue(testStr));
 
@@ -53,7 +53,7 @@ public class CalculatorTest_2 {
     @Test
     @DisplayName("0으로 나누기")
     void dividedByZero() {
-       assertThat(Calculator.calc("1 / 0")).isEqualTo("0으로 나눌 수 없습니다.");
+        assertThat(Calculator.calc("1 / 0")).isEqualTo("0으로 나눌 수 없습니다.");
     }
 
     @Test
@@ -81,7 +81,7 @@ public class CalculatorTest_2 {
     @Test
     @DisplayName("계산기 테스트")
     void calcTest() {
-        //assertThat(calculator.calc()).isEqualTo("4");
-        assertThat(Calculator.calc(testStr)).isEqualTo("10");
+        assertThat(Calculator.calc(testStr)).isEqualTo("4");
+        //assertThat(Calculator.calc(testStr)).isEqualTo("10");
     }
 }
