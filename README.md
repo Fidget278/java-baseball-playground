@@ -1,26 +1,54 @@
-## [NEXTSTEP 플레이그라운드의 미션 진행 과정](https://github.com/next-step/nextstep-docs/blob/master/playground/README.md)
 
----
-## 학습 효과를 높이기 위해 추천하는 미션 진행 방법
+# 기능 목록
 
----
-1. 피드백 강의 전까지 미션 진행 
-> 피드백 강의 전까지 혼자 힘으로 미션 진행. 미션을 진행하면서 하나의 작업이 끝날 때 마다 add, commit
-> 예를 들어 다음 숫자 야구 게임의 경우 0, 1, 2단계까지 구현을 완료한 후 push
+1. 컴퓨터는 3개의 숫자를 뽑는다.
+   - 1~9 사이의 숫자만 가능하다.
+   - 중복된 숫자가 아니어야한다.
+   - 딱 3자리의 수만 가능하다.
+   
 
-![mission baseball](https://raw.githubusercontent.com/next-step/nextstep-docs/master/playground/images/mission_baseball.png)
+2. 사용자는 3개의 숫자를 입력한다. 
+   - 1~9 사이의 숫자만 가능하다.
+   - 중복된 숫자가 아니어야한다.
+   - 딱 3자리의 수만 가능하다.
 
----
-2. 피드백 앞 단계까지 미션 구현을 완료한 후 피드백 강의를 학습한다.
 
----
-3. Git 브랜치를 master 또는 main으로 변경한 후 피드백을 반영하기 위한 새로운 브랜치를 생성한 후 처음부터 다시 미션 구현을 도전한다.
+3. 게임 규칙
+   - 아무것도 맞지 않으면 Nothing
+   - 자리는 다르지만 숫자는 맞으면 Ball
+   - 자리와 숫자가 모두 맞으면 Strike
 
-```
-git branch -a // 모든 로컬 브랜치 확인
-git checkout master // 기본 브랜치가 master인 경우
-git checkout main // 기본 브랜치가 main인 경우
 
-git checkout -b 브랜치이름
-ex) git checkout -b apply-feedback
-```
+4. 게임 종료
+   - 스트라이크 3개면 종료
+   - 게임 종료 시 숫자 1을 누르면 재시작, 2면 종료 
+
+
+# 객체
+
+Ball (공 하나가 되는 객체)
+
+BallStatus (enum - 공 하나에 대한 결과)
+
+
+
+
+
+# 게임 화면
+
+숫자를 입력해 주세요 : 123<br>
+1볼 1스트라이크<br>
+숫자를 입력해 주세요 : 145<br>
+1볼<br>
+숫자를 입력해 주세요 : 671<br>
+2볼<br>
+숫자를 입력해 주세요 : 216<br>
+1스트라이크<br>
+숫자를 입력해 주세요 : 713<br>
+3스트라이크<br>
+3개의 숫자를 모두 맞히셨습니다! 게임 종료<br>
+게임을 새로 시작하려면 1, 종료하려면 2를 입력하세요.<br>
+1<br>
+숫자를 입력해 주세요 : 123<br>
+1볼 1스트라이크<br>
+…<br>
